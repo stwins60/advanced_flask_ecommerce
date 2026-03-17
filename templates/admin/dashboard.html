@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<form method="post" action="/admin/add" class="form">
+<input name="name" placeholder="Product name">
+<input name="price" placeholder="Price">
+<input name="image" placeholder="Image URL">
+<textarea name="description" placeholder="Description"></textarea>
+<button class="btn">Add Product</button>
+</form>
+
+<h3>Products</h3>
+
+<ul>
+{% for p in products %}
+<li>{{p.name}} - ${{p.price}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
