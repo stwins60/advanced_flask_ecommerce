@@ -19,10 +19,10 @@ pipeline {
             steps {
                 script {
                     if (env.BRANCH_NAME == "dev") {
-                        sh "docker build -t $IMAGE_NAME:$BRANCH_NAME-$IMAGE_TAG"
+                        sh "docker build -t $IMAGE_NAME:$BRANCH_NAME-$IMAGE_TAG ."
                         echo "Docker image built successfully"
                     } else if (env.BRANCH_NAME == "prod") {
-                        sh "docker build -t $IMAGE_NAME:$BRANCH_NAME-$IMAGE_TAG"
+                        sh "docker build -t $IMAGE_NAME:$BRANCH_NAME-$IMAGE_TAG ."
                         echo "Docker image built successfully"
                     }
                 }
