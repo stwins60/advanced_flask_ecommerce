@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-app-svc
+  namespace: NAMESPACE
+spec:
+  selector:
+    app: ecommerce-app
+    owner: idris
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: ClusterIP
