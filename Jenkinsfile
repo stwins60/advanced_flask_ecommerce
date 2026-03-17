@@ -31,7 +31,7 @@ pipeline {
         stage("Docker Push") {
             steps {
                 sh "docker push $IMAGE_NAME:$BRANCH_NAME-$IMAGE_TAG"
-                "Image pushed successfully"
+                echo "Image pushed successfully"
             }
         }
         stage("Deployment") {
